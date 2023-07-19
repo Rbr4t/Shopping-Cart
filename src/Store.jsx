@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Store = () => {
 
-    const [orders, addOrder] = useState(() => JSON.parse(localStorage.getItem('orders')))
+    const [orders, addOrder] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
 
     const data = [
         { name: "table lamp", id: 1, price: 100},
@@ -24,7 +24,6 @@ const Store = () => {
         } else {
             addOrder([...orders, data])
         }
-        
     }
 
     // for saving our order data to localStorage
