@@ -58,5 +58,4 @@ describe("Functional parts of the component", () => {
 
     });
 
-    it("can add a new order", () => {});
 })
