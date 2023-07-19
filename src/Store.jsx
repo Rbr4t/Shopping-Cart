@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Store = () => {
 
-    const [orders, addOrder] = useState([])
+    const [orders, addOrder] = useState(() => JSON.parse(localStorage.getItem('orders')))
 
     const data = [
         { name: "table lamp", id: 1, price: 100},
@@ -27,8 +27,9 @@ const Store = () => {
         
     }
 
-    useEffect(() => {
-        console.log(orders)
+    // for saving our order data to localStorage
+    useEffect( () => {
+        localStorage.setItem('orders', JSON.stringify(orders))
     }, [orders])
 
     return (

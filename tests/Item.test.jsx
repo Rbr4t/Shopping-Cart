@@ -3,8 +3,6 @@ import userEvent from "@testing-library/user-event";
 import Item from "../src/components/Item";
 import { vi } from "vitest";
 
-import { handleClick } from '../src/components/Item' 
-
 describe('Visual appearance', () => {
     
     it('has title and price tag', () => {
