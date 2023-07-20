@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Item= ({ name, id, price, description="", image=null, callbackToParent }) => {
+
     const [quantity, setQuantity] = useState(1)
 
     const handleClick = () => {

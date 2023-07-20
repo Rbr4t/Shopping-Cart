@@ -1,27 +1,21 @@
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
+import './styles/Dialog.css'
 
 const Checkout = () => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
 
     const [totalSum, setTotalSum] = useState(0);
 
-    useEffect(() => {
-        setTotalSum(0)
-        orders.map((order) => {
-            setTotalSum(prev => prev + order.quantity*order.price)
-        })
-        
-    }, [orders])
-
     const removeFromOrder = (id) => {
-        setOrders(orders.filter(v => {
+        const order = orders.filter(v => {
             return v.id !== id
-        }))
+        })
+        setOrders(order)
     }
 
     const handleOrderChange = (id, operation) => {
         let newOrder;
+        
         if(operation===0) {
             newOrder = orders.map((order) => {
                 if(order.id!==id) return order
@@ -53,23 +47,29 @@ const Checkout = () => {
 
     useEffect(() => {
         localStorage.setItem('orders', JSON.stringify(orders))
+        setTotalSum(0)
+        orders.map((order) => {
+            setTotalSum(prev => prev + order.quantity*order.price)
+        })
     }, [orders])
 
     return (
-        <div>
-            <Navbar />
-            <h2>Checkout</h2>
+        <div className="cart">
+            <h2>Your cart:</h2>
             <table>
-                
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+
                 <tbody>
                     {orders.map((order) => {
                         return (
                             <tr key={order.id}>
+                                
                                 <td>{order.name}</td>
                                 <td>{order.price}</td>
                                 <td>{order.quantity}</td>
@@ -80,12 +80,13 @@ const Checkout = () => {
                                 </td>
                                 
                             </tr>
+                            
                     )})}
                 </tbody>
 
             </table>
             
-            <h4>Total: {totalSum}€</h4>
+            <button disabled={totalSum>0? false: true}>Continue {totalSum}€</button>
 
         </div>
     )

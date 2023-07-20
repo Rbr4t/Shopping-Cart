@@ -11,13 +11,9 @@ describe("Component renders", () => {
             <Checkout />
         </MemoryRouter>
         )
-        expect(screen.getByRole('heading', {name: /Checkout/i}).textContent).toMatch(/Checkout/i)
+        expect(screen.getByRole('heading', {name: /Your cart:/i})).toBeInTheDocument()
     });
 
-    
-})
-
-describe('functional parts', () => {
     it("has all products listed up", () => {
         const data = [{"id":1,"name":"table lamp","price":100,"quantity":3},{"id":3,"name":"salt lamp","price":250,"quantity":1},{"id":2,"name":"night lamp","price":200,"quantity":1}]
         localStorage.setItem('orders', JSON.stringify(data));
@@ -29,4 +25,9 @@ describe('functional parts', () => {
         )
         
         expect(screen.getAllByRole('row').length).toEqual(4)
-    });})
+    });
+})
+
+describe('functional parts', () => {
+    it()
+})
