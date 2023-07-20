@@ -15,7 +15,7 @@ const Checkout = () => {
 
     const handleOrderChange = (id, operation) => {
         let newOrder;
-        
+
         if(operation===0) {
             newOrder = orders.map((order) => {
                 if(order.id!==id) return order
@@ -71,7 +71,7 @@ const Checkout = () => {
                             <tr key={order.id}>
                                 
                                 <td>{order.name}</td>
-                                <td>{order.price}</td>
+                                <td>{order.price}€</td>
                                 <td>{order.quantity}</td>
                                 <td>
                                     <button onClick={() => handleOrderChange(order.id, 0)}>-</button>

@@ -10,9 +10,9 @@ const Item= ({ name, id, price, description="", image=null, callbackToParent }) 
 
     return (
         <div>
-            <img src={image} alt=""></img>
+            <img src={image[1]} height={200} alt=""></img>
             <h2>{name}</h2>
-            <h4>{price}</h4>
+            <h4>{price}€</h4>
             <p>{description}</p>
             <div>
                 <p>Quantity: {quantity}</p>
