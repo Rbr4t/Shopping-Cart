@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import './styles/Dialog.css'
+import orderStyles from './styles/Dialog.module.css'
 
 const Checkout = () => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
     const productIcons = {
-        "1": "../src/assets/pic1_1.avif",
-        "2": "../src/assets/pic2_1.avif",
-        "3": "../src/assets/pic3_1.avif",
-        "4": "../src/assets/pic4_1.avif",
-        "5": "../src/assets/pic5_1.avif",
+        "1": "../src/assets/images/pic1_1.avif",
+        "2": "../src/assets/images/pic2_1.avif",
+        "3": "../src/assets/images/pic3_1.avif",
+        "4": "../src/assets/images/pic4_1.avif",
+        "5": "../src/assets/images/pic5_1.avif",
      }
     const [totalSum, setTotalSum] = useState(0);
 

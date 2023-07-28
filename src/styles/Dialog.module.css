@@ -3,7 +3,7 @@
 .cart {
     background-color: antiquewhite;
     position: absolute;
-    top: 1px;
+    top: auto;
     right: 1px;
     height: 100%;
 }

@@ -1,0 +1,13 @@
+.two {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    grid-auto-rows: max-content;
+}
+
+.one {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    height: 100%;
+
+}

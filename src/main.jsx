@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Landingpage from './LandingPage.jsx';
+import Landingpage from './components/LandingPage.jsx';
 import Store from './Store.jsx';
 import ItemPage from './components/ItemPage.jsx'
 import Error from './components/Error.jsx';
