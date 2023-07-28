@@ -10,23 +10,20 @@ const router = createBrowserRouter([
   { 
     path: "/", 
     element: <Landingpage />,
-    errorElement: <Error />
+    errorElement: <Error message={'No such route'}/>
   },
 
   {
     path: "/store",
-    element: <Store />
+    element: <Store />,
   },
-  {
-    path: "/store/:productId",
-    element: <ItemPage />
-  },
-  {
-    path: "/testing",
-    element: <ItemPage data={{ name: "Valentine", id: 1, price: 84.50, img: ['src/assets/pic1.avif', 'src/assets/pic1_1.avif'], description: 'Valentine table lamp, white marble and metal with a green painted finish'}}/>
-  }
 
-  
+  {
+    path: "/product/:productId",
+    element: <ItemPage />,
+    errorElement: <Error message={'No such product'} />
+  },
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

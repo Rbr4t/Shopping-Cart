@@ -33,7 +33,7 @@ describe('Component renders', () => {
             </MemoryRouter>
         )
 
-        expect(screen.getByText('table lamp')).toBeInTheDocument()
+        expect(screen.getByText('Valentine')).toBeInTheDocument()
         expect(screen.getAllByRole("img")[0]).toBeInTheDocument()
         expect(screen.getAllByRole('button', {name: 'Add to cart'})[0]).toBeInTheDocument()
 

@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Item from "./components/Item";
+import DisplayItem from "./components/DisplayItem";
 import { useEffect, useState } from "react";
 import Checkout from "./Checkout";
 import './styles/Store.css'
@@ -15,7 +15,6 @@ const Store = () => {
         { name: "Noara", id: 3, price: 95.50, img: ['./src/assets/pic3.avif', './src/assets/pic3_1.avif'], description: 'Noara magnesium table lamp with a white finish'},
         { name: "Erna", id: 4, price: 44.50, img: ['./src/assets/pic4.avif', './src/assets/pic4_1.avif'], description: 'Erna bamboo ceiling lampshade with natural, white finish Ø 40 cm'},
         { name: "Benicarlo", id: 5, price: 62.50, img: ['./src/assets/pic5.avif', './src/assets/pic5_1.avif'], description: 'Benicarlo table lamp in wood with a natural, beige finish'},
-
     ]
 
     const showCart = () => {
@@ -50,8 +49,6 @@ const Store = () => {
                 addOrder(prev => [...prev ,data])
             }  
           })
-        
-        
     }
 
     // for saving our order data to localStorage
@@ -66,7 +63,7 @@ const Store = () => {
                 <h1>Store</h1>
 
                     {data.map((item) => {
-                        return <Item key={item.id} id={item.id} name={item.name} price={item.price}image={item.img} callbackToParent={manageOrders} />
+                        return <DisplayItem key={item.id} id={item.id} name={item.name} price={item.price}image={item.img} callbackToParent={manageOrders} />
                     })
                     }
 

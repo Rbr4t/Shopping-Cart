@@ -3,7 +3,13 @@ import './styles/Dialog.css'
 
 const Checkout = () => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
-
+    const productIcons = {
+        "1": "../src/assets/pic1_1.avif",
+        "2": "../src/assets/pic2_1.avif",
+        "3": "../src/assets/pic3_1.avif",
+        "4": "../src/assets/pic4_1.avif",
+        "5": "../src/assets/pic5_1.avif",
+     }
     const [totalSum, setTotalSum] = useState(0);
 
     const removeFromOrder = (id) => {
@@ -59,7 +65,8 @@ const Checkout = () => {
             <table>
                 <thead>
                     <tr>
-                        <th>Product</th>
+                        <th colSpan={2}>Product</th>
+                        
                         <th>Price</th>
                         <th>Quantity</th>
                     </tr>
@@ -69,7 +76,7 @@ const Checkout = () => {
                     {orders.map((order) => {
                         return (
                             <tr key={order.id}>
-                                
+                                <td><img src={productIcons[order.id]} height="90" alt="" /></td>
                                 <td>{order.name}</td>
                                 <td>{order.price}€</td>
                                 <td>{order.quantity}</td>
@@ -86,7 +93,7 @@ const Checkout = () => {
 
             </table>
             
-            <button disabled={totalSum>0? false: true}>Continue {totalSum}€</button>
+            <button disabled={totalSum>0? false: true}> <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Continue {totalSum}€</a></button>
 
         </div>
     )

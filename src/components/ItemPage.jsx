@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
 import Checkout from "../Checkout";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ItemPage = () => {
-    const [quantity, setQuantity] = useState(1)
     const [cart, setCart] = useState(false)
     const storeData = [
         
@@ -16,6 +15,7 @@ const ItemPage = () => {
     ]
     const params = useParams();
     const data = storeData[params.productId-1]
+    const navigate = useNavigate()
 
     const showCart = () => {        
         setCart(prev => !prev)
@@ -25,7 +25,7 @@ const ItemPage = () => {
         <div>
             <Navbar showCart={showCart} />
             <div disabled={cart}>
-                <button>←</button>
+                <button onClick={() => navigate(-1)}>←</button>
                 <img src={data.img[0]} alt={`${data.name} main`} height={250}></img>
                 <img src={data.img[1]} alt={`${data.name} main`} height={250}></img>
 
@@ -35,12 +35,7 @@ const ItemPage = () => {
 
                 <div>
                     <p>Availability: <span style={{color: "green"}}>In stock</span></p>
-                    <div>
-                        <p>Quantity: {quantity}</p>
-                        <button onClick={() => setQuantity(quantity + 1)}>+</button>
-                        <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : quantity)}>-</button>
-                    </div>
-                    <button>Buy now!</button>
+                   
                 </div>
             </div>
             {cart ? <Checkout /> : null}
