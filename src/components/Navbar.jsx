@@ -13,19 +13,19 @@ const Navbar = ({ showCart }) => {
             <Link to="/"><h3 style={{display: "flex", alignItems: "center"}}>
                 <img src={lamp}></img> LightStore
             </h3></Link>
-            <br></br>
-            <Link to="/store"><h3>Store</h3></Link>
-            <br></br>
-            <Link onClick={showCart}>
-                <div className={cartStyles.parent} >
-                    <div className={cartStyles.wrapper}>
-                        <img className={cartStyles.shopping_cart} alt="shopping cart" src={cart}></img>
-                        
+            <div className={navStyles.shop}>
+                <Link to="/store"><h3>Store</h3></Link>
+                <Link onClick={showCart}>
+                    <div className={cartStyles.parent} >
+                        <div className={cartStyles.wrapper}>
+                            <img className={cartStyles.shopping_cart} alt="shopping cart" src={cart}></img>
+                            
+                        </div>
+                        <div className={cartStyles.notification}>4</div>
                     </div>
-                    <div className={cartStyles.notification}>4</div>
-                </div>
-                
-            </Link>
+                </Link>
+            </div>
+            
         </nav>
         </div>
         

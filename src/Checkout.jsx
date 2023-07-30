@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { ReactComponentElement } from "react";
 import './styles/Global.css'
 import styles from './styles/Checkout.module.css'
-
+import trash from './assets/trash.png'
 
 const Checkout = () => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
@@ -88,7 +89,9 @@ const Checkout = () => {
                                         <div className="checkout">
                                             <button onClick={() => handleOrderChange(order.id, 0)} className="quantity">-</button>
                                             <button onClick={() => handleOrderChange(order.id, 1)} className="quantity">+</button>
-                                            <button onClick={() => removeFromOrder(order.id)} >trash</button>
+                                            <button style={{backgroundColor: "white"}} onClick={() => removeFromOrder(order.id)}>
+                                                <img src={trash} height={28}></img>
+                                            </button>
                                         </div>
                                         
                                     </td>

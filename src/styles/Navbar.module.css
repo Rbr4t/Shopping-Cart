@@ -1,8 +1,12 @@
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: rgb(19, 19, 19);
-    padding: 1rem;
-    
+    padding: 1rem 2rem 1rem;
+}
+
+.shop {
+    display: flex;
+    gap: 3rem;
 }

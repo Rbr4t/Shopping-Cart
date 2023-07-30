@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 import Checkout from "../Checkout";
 import { useNavigate, useParams } from "react-router-dom";
+import ItemCss from '../styles/ItemPage.module.css'
 
 const ItemPage = () => {
     const [cart, setCart] = useState(false);  // src/assets/images
@@ -24,10 +25,13 @@ const ItemPage = () => {
     return (
         <div>
             <Navbar showCart={showCart} />
-            <div disabled={cart}>
+            <div disabled={cart} >
                 <button onClick={() => navigate(-1)}>←</button>
-                <img src={data.img[0]} alt={`${data.name} main`} height={250}></img>
-                <img src={data.img[1]} alt={`${data.name} main`} height={250}></img>
+                <div>
+                    <img src={data.img[0]} alt={`${data.name} main`} className={ItemCss.images}></img>
+                    <img src={data.img[1]} alt={`${data.name} main`} className={ItemCss.images}></img>
+                </div>
+                
 
                 <h2>{data.name}</h2>
                 <p>{data.description}</p>
