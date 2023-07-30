@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import orderStyles from './styles/Dialog.module.css'
+import './styles/Global.css'
+import styles from './styles/Checkout.module.css'
+
 
 const Checkout = () => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
@@ -62,39 +64,46 @@ const Checkout = () => {
     return (
         <div className="cart">
             <h2>Your cart:</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th colSpan={2}>Product</th>
-                        
-                        <th>Price</th>
-                        <th>Quantity</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    {orders.map((order) => {
-                        return (
-                            <tr key={order.id}>
-                                <td><img src={productIcons[order.id]} height="90" alt="" /></td>
-                                <td>{order.name}</td>
-                                <td>{order.price}€</td>
-                                <td>{order.quantity}</td>
-                                <td>
-                                    <button onClick={() => handleOrderChange(order.id, 0)}>-</button>
-                                    <button onClick={() => handleOrderChange(order.id, 1)}>+</button>
-                                    <button onClick={() => removeFromOrder(order.id)}>trash</button>
-                                </td>
-                                
-                            </tr>
+            <div className={styles.cart_section}>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colSpan={2}>Product</th>
                             
-                    )})}
-                </tbody>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
 
-            </table>
+                    <tbody>
+                        {orders.map((order) => {
+                            return (
+                                <tr key={order.id}>
+                                    <td><img src={productIcons[order.id]} height="90" alt="" /></td>
+                                    <td>{order.name}</td>
+                                    <td>{order.price}€</td>
+                                    <td>{order.quantity}</td>
+                                    <td>
+                                        <div className="checkout">
+                                            <button onClick={() => handleOrderChange(order.id, 0)} className="quantity">-</button>
+                                            <button onClick={() => handleOrderChange(order.id, 1)} className="quantity">+</button>
+                                            <button onClick={() => removeFromOrder(order.id)} >trash</button>
+                                        </div>
+                                        
+                                    </td>
+                                    
+                                </tr>
+                                
+                        )})}
+                    </tbody>
+
+                </table>
+                
+                <button className="payorder" disabled={totalSum>0? false: true}> <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Continue {totalSum}€</a></button>
+
+            </div>
             
-            <button disabled={totalSum>0? false: true}> <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Continue {totalSum}€</a></button>
-
         </div>
     )
 };

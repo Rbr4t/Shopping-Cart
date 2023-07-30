@@ -2,7 +2,9 @@ import Navbar from "./components/Navbar";
 import DisplayItem from "./components/DisplayItem";
 import { useEffect, useState } from "react";
 import Checkout from "./Checkout";
-import './styles/Store.module.css'
+import './styles/Global.css'
+
+import styles from './styles/Store.module.css'
 
 const Store = () => {
 
@@ -61,11 +63,12 @@ const Store = () => {
             <Navbar showCart={showCart} />
             <div disabled={cart}>
                 <h1>Store</h1>
-
-                    {data.map((item) => {
-                        return <DisplayItem key={item.id} id={item.id} name={item.name} price={item.price}image={item.img} callbackToParent={manageOrders} />
-                    })
-                    }
+                    <div className={styles.map}>
+                        {data.map((item) => {
+                            return <DisplayItem key={item.id} id={item.id} name={item.name} price={item.price}image={item.img} callbackToParent={manageOrders} />
+                        })
+                        }
+                    </div>                  
 
             </div>
             {cart ? <Checkout /> : null}

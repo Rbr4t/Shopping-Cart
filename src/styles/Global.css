@@ -1,0 +1,64 @@
+a {
+    text-decoration: none;
+    color: rgb(235, 234, 234);
+}
+
+button {
+    background-color: black;
+    color: rgb(235, 234, 234);
+    border: 0;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 0.2rem;
+    border-radius: 4px;
+
+}
+
+td {
+    text-align: center;
+}
+
+.quantity {
+    width: 1.5rem;
+}
+
+.checkout {
+    display: flex;
+    gap: 0.5rem;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button::backdrop {
+    background-color: rgb(226, 226, 226);
+
+}
+
+.manage {
+    display: flex;
+    gap: 1rem;
+}
+
+.cart {
+    background-color: antiquewhite;
+    align-content: center;
+    height: 100%;
+}
+
+.cart::backdrop {
+    background-color: gray;
+}
+
+button .payorder {
+    padding: 1rem;
+}
+
+div[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+}

@@ -1,4 +1,7 @@
-div[disabled] {
-    pointer-events: none;
-    opacity: 0.7;
+.map {
+    display: grid;
+    /* grid-template-columns: repeat( auto-fill, minmax(33.33%, 1fr) ); */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    /* justify-content: stretch; */
+    gap: 1rem;
 }

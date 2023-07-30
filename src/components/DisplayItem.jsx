@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import '../styles/Global.css'
+import styles from '../styles/DisplayItem.module.css'
 
 
 const Item= ({ name, id, price, description="", image=null, callbackToParent }) => {
@@ -14,19 +16,30 @@ const Item= ({ name, id, price, description="", image=null, callbackToParent }) 
     }
 
     return (
-        <div>
-            <Link to={`../product/${id}`}><img src={image? image[1]: null} height={200} alt=""></img></Link>
-            <h2>{name}</h2>
-            <h4>{price}€</h4>
-            <p>{description}</p>
-            <div>
-                <p>Quantity: {quantity}</p>
-                <button onClick={() => setQuantity(quantity + 1)}>+</button>
-                <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : quantity)}>-</button>
+        <div className={styles.main}>
+            <div className={styles.first}>
+                <Link to={`../product/${id}`}><img src={image? image[1]: null} height={200} alt=""></img></Link>
+                <div className={styles.first_inside}>
+                    <h2>{name}</h2>
+                    <h4>{price}€</h4>
+                </div>
+                
+
             </div>
+            <div className={styles.add}>
+                
+                <p>Quantity: {quantity}</p>
+
+                <div className={styles.second}>
+                    <button className="quantity" onClick={() => setQuantity(quantity + 1)}>+</button>
+                    <button className="quantity" onClick={() => setQuantity(quantity > 1 ? quantity - 1 : quantity)}>-</button>
+                    <button onClick={handleClick}>Add to cart</button>
+
+                </div>
             
 
-            <button onClick={handleClick}>Add to cart</button>
+            </div>
+            
         </div>
     )
 }

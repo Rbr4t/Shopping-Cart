@@ -13,17 +13,17 @@ const Landingpage = () => {
   }
 
   return (
-    <div>
+    <main>
       <Navbar showCart={showCart} />
       <div className={`centre ${cart ? styles.two : styles.one}`}>
-        <div>
+        <div className="info">
           <h1>High quality table lamps</h1>
           <button>Learn more</button>
         </div>
         {cart ? <Checkout /> : null}
 
       </div>
-    </div>
+    </main>
   )
 }
 

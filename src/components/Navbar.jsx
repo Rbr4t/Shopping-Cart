@@ -7,7 +7,8 @@ import navStyles from '../styles/Navbar.module.css'
 
 const Navbar = ({ showCart }) => {
     return (
-        <nav className={navStyles}>
+        <div>
+<nav className={navStyles}>
             <Link to="/">Home</Link>
             <br></br>
             <Link to="/store">Store</Link>
@@ -23,6 +24,8 @@ const Navbar = ({ showCart }) => {
                 
             </Link>
         </nav>
+        </div>
+        
     )
 }
 

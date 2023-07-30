@@ -1,0 +1,6 @@
+.cart_section {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-between;
+}
