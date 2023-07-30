@@ -3,4 +3,5 @@
     flex-direction: column;
     height: 90%;
     justify-content: space-between;
+    padding: 1rem;
 }

@@ -1,8 +1,9 @@
 import Navbar from "./Navbar";
 import Checkout from "../Checkout";
 import { useState } from "react";
-import styles from '../styles/LandingPage.module.css'
-import '../styles/LandingPage.css'
+import styles from '../styles/Modal.module.css'
+import '../styles/Global.css'
+
 
 const Landingpage = () => {
 

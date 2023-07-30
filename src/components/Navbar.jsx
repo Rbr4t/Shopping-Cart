@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 import cart from '../assets/shopping-cart.png'
 import cartStyles from '../styles/Cart.module.css'
 import navStyles from '../styles/Navbar.module.css'
-
+import lamp from '../assets/light-bulb.png'
 
 
 const Navbar = ({ showCart }) => {
     return (
         <div>
 <nav className={navStyles}>
-            <Link to="/">Home</Link>
+            
+            <Link to="/"><h3 style={{display: "flex", alignItems: "center"}}>
+                <img src={lamp}></img> LightStore
+            </h3></Link>
             <br></br>
-            <Link to="/store">Store</Link>
+            <Link to="/store"><h3>Store</h3></Link>
             <br></br>
             <Link onClick={showCart}>
                 <div className={cartStyles.parent} >

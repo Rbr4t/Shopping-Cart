@@ -3,6 +3,7 @@ import DisplayItem from "./components/DisplayItem";
 import { useEffect, useState } from "react";
 import Checkout from "./Checkout";
 import './styles/Global.css'
+import modal from './styles/Modal.module.css'
 
 import styles from './styles/Store.module.css'
 
@@ -59,19 +60,26 @@ const Store = () => {
     }, [orders])
 
     return (
-        <div >
+        <div>
             <Navbar showCart={showCart} />
-            <div disabled={cart}>
-                <h1>Store</h1>
-                    <div className={styles.map}>
-                        {data.map((item) => {
-                            return <DisplayItem key={item.id} id={item.id} name={item.name} price={item.price}image={item.img} callbackToParent={manageOrders} />
-                        })
-                        }
-                    </div>                  
+            <div className={`centre ${cart ? modal.two : null}`}>
+                <div className={styles.nice_grid}>
+                    <h1>Store</h1>
+                    <div disabled={cart}>
+                    
+                        <div className={styles.map}>
+                            {data.map((item) => {
+                                return <DisplayItem key={item.id} id={item.id} name={item.name} price={item.price}image={item.img} callbackToParent={manageOrders} />
+                            })
+                            }
+                        </div>                  
 
+                    </div>
+                </div>
+                
+                {cart ? <Checkout /> : null}
             </div>
-            {cart ? <Checkout /> : null}
+            
             
         </div>
     )
