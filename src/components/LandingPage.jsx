@@ -3,7 +3,7 @@ import Checkout from "../Checkout";
 import { useState } from "react";
 import styles from '../styles/Modal.module.css'
 import '../styles/Global.css'
-
+import Footer from './Footer'
 
 const Landingpage = () => {
 
@@ -24,6 +24,7 @@ const Landingpage = () => {
         {cart ? <Checkout /> : null}
 
       </div>
+      <Footer />
     </main>
   )
 }

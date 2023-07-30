@@ -40,7 +40,7 @@ main>div {
 main {
     display: grid;
     grid-template-rows: 0.2fr 2fr;
-    height: calc(100vh - 30px); /* Right now setting this height centers it to the middle of the page, but it doesn't fill up the remaining room */
+    height: 100vh; /* Right now setting this height centers it to the middle of the page, but it doesn't fill up the remaining room */
 }
 
 a {

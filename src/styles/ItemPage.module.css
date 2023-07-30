@@ -4,6 +4,19 @@
 
 .layout {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    gap: 3rem;
+}
+
+.center {
+    padding: 10% 20% 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-content: center;
+    justify-items: center;
+    gap: 10%;
 }

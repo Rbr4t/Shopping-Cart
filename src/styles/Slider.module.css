@@ -11,12 +11,8 @@
 }
 
 .arrow {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
     padding: 1rem;
-    font-size: 3rem;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
     user-select: none;

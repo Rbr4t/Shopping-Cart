@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Checkout from "./Checkout";
 import './styles/Global.css'
 import modal from './styles/Modal.module.css'
-
+import Footer from "./components/Footer";
 import styles from './styles/Store.module.css'
 
 const Store = () => {
@@ -79,7 +79,7 @@ const Store = () => {
                 
                 {cart ? <Checkout /> : null}
             </div>
-            
+            <Footer />
             
         </div>
     )

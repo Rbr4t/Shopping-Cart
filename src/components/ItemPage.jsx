@@ -26,7 +26,7 @@ const ItemPage = () => {
     return (
         <div>
             <Navbar showCart={showCart} />
-            <div disabled={cart} >
+            <div disabled={cart} className={ItemCss.center} >
                 <button onClick={() => navigate(-1)}>←</button>
 
                 <div className={ItemCss.layout}>
