@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Checkout from "../Checkout";
 import { useNavigate, useParams } from "react-router-dom";
 import ItemCss from '../styles/ItemPage.module.css'
+import ImageSlider from "./ImageSlider";
 
 const ItemPage = () => {
     const [cart, setCart] = useState(false);  // src/assets/images
@@ -27,20 +28,27 @@ const ItemPage = () => {
             <Navbar showCart={showCart} />
             <div disabled={cart} >
                 <button onClick={() => navigate(-1)}>←</button>
-                <div>
-                    <img src={data.img[0]} alt={`${data.name} main`} className={ItemCss.images}></img>
-                    <img src={data.img[1]} alt={`${data.name} main`} className={ItemCss.images}></img>
+
+                <div className={ItemCss.layout}>
+                    <div>
+                        <ImageSlider slides={data}/>
+                    </div>
+
+                    <div>
+                        <h2>{data.name}</h2>
+                        <p>{data.description}</p>
+                        <p><strong>{data.price} € + VAT</strong></p>
+
+                        <div>
+                            <p>Availability: <span style={{color: "green"}}>In stock</span></p>
+                        
+                        </div>
+                    </div>
                 </div>
                 
+                
 
-                <h2>{data.name}</h2>
-                <p>{data.description}</p>
-                <p><strong>{data.price} € + VAT</strong></p>
-
-                <div>
-                    <p>Availability: <span style={{color: "green"}}>In stock</span></p>
-                   
-                </div>
+                
             </div>
             {cart ? <Checkout /> : null}
             

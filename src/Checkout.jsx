@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ReactComponentElement } from "react";
 import './styles/Global.css'
 import styles from './styles/Checkout.module.css'
 import trash from './assets/trash.png'
