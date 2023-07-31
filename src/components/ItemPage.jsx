@@ -7,16 +7,16 @@ import ImageSlider from "./ImageSlider";
 import Footer from "./Footer";
 import styles from '../styles/Modal.module.css'
 
-import pic1 from './assets/images/pic1.png';
-import pic1_1 from './assets/images/pic1_1.png'
-import pic2 from './assets/images/pic2.png';
-import pic2_1 from './assets/images/pic2_1.png'
-import pic3 from './assets/images/pic3.png';
-import pic3_1 from './assets/images/pic3_1.png'
-import pic4 from './assets/images/pic4.png';
-import pic4_1 from './assets/images/pic4_1.png'
-import pic5 from './assets/images/pic5.png';
-import pic5_1 from './assets/images/pic5_1.png'
+import pic1 from '../assets/images/pic1.png';
+import pic1_1 from '../assets/images/pic1_1.png'
+import pic2 from '../assets/images/pic2.png';
+import pic2_1 from '../assets/images/pic2_1.png'
+import pic3 from '../assets/images/pic3.png';
+import pic3_1 from '../assets/images/pic3_1.png'
+import pic4 from '../assets/images/pic4.png';
+import pic4_1 from '../assets/images/pic4_1.png'
+import pic5 from '../assets/images/pic5.png';
+import pic5_1 from '../assets/images/pic5_1.png'
 
 const ItemPage = () => {
     const [cart, setCart] = useState(false);  // src/assets/images
