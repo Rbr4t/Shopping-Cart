@@ -7,17 +7,28 @@ import modal from './styles/Modal.module.css'
 import Footer from "./components/Footer";
 import styles from './styles/Store.module.css'
 
+import pic1 from './assets/images/pic1.png';
+import pic1_1 from './assets/images/pic1_1.png'
+import pic2 from './assets/images/pic2.png';
+import pic2_1 from './assets/images/pic2_1.png'
+import pic3 from './assets/images/pic3.png';
+import pic3_1 from './assets/images/pic3_1.png'
+import pic4 from './assets/images/pic4.png';
+import pic4_1 from './assets/images/pic4_1.png'
+import pic5 from './assets/images/pic5.png';
+import pic5_1 from './assets/images/pic5_1.png'
+
 const Store = () => {
 
     const [orders, addOrder] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
     const [cart, setCart] = useState(false)
     
     const data = [
-        { name: "Valentine", id: 1, price: 84.50, img: ['../assets/images/pic1.png', '../assets/images/pic1_1.png'], description: 'Valentine table lamp, white marble and metal with a green painted finish'},
-        { name: "Mijal", id: 2, price: 111.00, img: ['../assets/images/pic2.png', '../assets/images/pic2_1.png'], description: 'Mijal ceramic table lamp with a white finish'},
-        { name: "Noara", id: 3, price: 95.50, img: ['../assets/images/pic3.png', '../assets/images/pic3_1.png'], description: 'Noara magnesium table lamp with a white finish'},
-        { name: "Erna", id: 4, price: 44.50, img: ['../assets/images/pic4.png', '../assets/images/pic4_1.png'], description: 'Erna bamboo ceiling lampshade with natural, white finish Ø 40 cm'},
-        { name: "Benicarlo", id: 5, price: 62.50, img: ['../assets/images/pic5.png', '../assets/images/pic5_1.png'], description: 'Benicarlo table lamp in wood with a natural, beige finish'},
+        { name: "Valentine", id: 1, price: 84.50, img: [pic1 , pic1_1], description: 'Valentine table lamp, white marble and metal with a green painted finish'},
+        { name: "Mijal", id: 2, price: 111.00, img: [pic2, pic2_1], description: 'Mijal ceramic table lamp with a white finish'},
+        { name: "Noara", id: 3, price: 95.50, img: [pic3, pic3_1], description: 'Noara magnesium table lamp with a white finish'},
+        { name: "Erna", id: 4, price: 44.50, img: [pic4, pic4_1], description: 'Erna bamboo ceiling lampshade with natural, white finish Ø 40 cm'},
+        { name: "Benicarlo", id: 5, price: 62.50, img: [pic5, pic5_1], description: 'Benicarlo table lamp in wood with a natural, beige finish'},
     ]
 
     const showCart = () => {

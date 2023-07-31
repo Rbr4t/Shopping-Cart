@@ -3,14 +3,20 @@ import './styles/Global.css'
 import styles from './styles/Checkout.module.css'
 import trash from './assets/trash.png'
 
+import pic1_1 from './assets/images/pic1_1.png'
+import pic2_1 from './assets/images/pic2_1.png'
+import pic3_1 from './assets/images/pic3_1.png'
+import pic4_1 from './assets/images/pic4_1.png'
+import pic5_1 from './assets/images/pic5_1.png'
+
 const Checkout = ({ callBackToParent }) => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
     const productIcons = {
-        "1": "../assets/images/pic1_1.png",
-        "2": "../assets/images/pic2_1.png",
-        "3": "../assets/images/pic3_1.png",
-        "4": "../assets/images/pic4_1.png",
-        "5": "../assets/images/pic5_1.png",
+        "1": pic1_1,
+        "2": pic2_1,
+        "3": pic3_1,
+        "4": pic4_1,
+        "5": pic5_1,
      }
     const [totalSum, setTotalSum] = useState(0);
 
