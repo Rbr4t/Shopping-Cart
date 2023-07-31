@@ -6,11 +6,11 @@ import trash from './assets/trash.png'
 const Checkout = ({ callBackToParent }) => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
     const productIcons = {
-        "1": "../src/assets/images/pic1_1.png",
-        "2": "../src/assets/images/pic2_1.png",
-        "3": "../src/assets/images/pic3_1.png",
-        "4": "../src/assets/images/pic4_1.png",
-        "5": "../src/assets/images/pic5_1.png",
+        "1": "../assets/images/pic1_1.png",
+        "2": "../assets/images/pic2_1.png",
+        "3": "../assets/images/pic3_1.png",
+        "4": "../assets/images/pic4_1.png",
+        "5": "../assets/images/pic5_1.png",
      }
     const [totalSum, setTotalSum] = useState(0);
 
