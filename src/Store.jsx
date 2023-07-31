@@ -67,7 +67,7 @@ const Store = () => {
         <main>
             <Navbar showCart={showCart} orders={orders} />
             <div className={`centre ${cart ? modal.two : null}`}>
-                <div className={styles.nice_grid}>
+                <div className={`${styles.nice_grid} ${cart ? 'hidden' : null}`} >
                     <h1>Store</h1>
                     <div disabled={cart}>
                     

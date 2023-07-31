@@ -29,9 +29,9 @@ const ItemPage = () => {
         <main>
             <Navbar showCart={showCart} />
             <div className={`${ItemCss.center} `}>
-                <button onClick={() => navigate(-1)}>←</button>
-                <div className={`${cart ? styles.two : styles.one}`} >
-                    <div className={ItemCss.layout} disabled={cart}>
+                <button onClick={() => navigate(-1)} className={`${cart ? 'hidden' : null}`}>←</button>
+                <div className={`${cart ? styles.two : styles.one}`} style={{width: '100%'}} >
+                    <div className={`${cart ? 'hidden' : null} ${ItemCss.layout}`} disabled={cart}>
                         <div>
                             <ImageSlider slides={data}/>
                         </div>

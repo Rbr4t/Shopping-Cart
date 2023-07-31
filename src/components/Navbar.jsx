@@ -47,7 +47,8 @@ const Navbar = ({ showCart, orders }) => {
                             <img className={cartStyles.shopping_cart} alt="shopping cart" src={cart}></img>
                             
                         </div>
-                        <div className={cartStyles.notification}>{count}</div>
+                        {count>0 ? <div className={cartStyles.notification}>{count}</div> : null}
+                        
                     </div>
                 </Link>
             </div>
