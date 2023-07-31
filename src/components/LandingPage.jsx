@@ -16,12 +16,12 @@ const Landingpage = () => {
   return (
     <main>
       <Navbar showCart={showCart} />
-      <div className={`centre ${cart ? styles.two : styles.one}`}>
+      <div className={`bg centre ${cart ? styles.two : styles.one}`}>
         <div className="info">
           <h1>High quality table lamps</h1>
           <button>Learn more</button>
         </div>
-        {cart ? <Checkout /> : null}
+        {cart ? <Checkout callBackToParent={() => null}/> : null}
 
       </div>
       <Footer />

@@ -11,9 +11,6 @@ const Item= ({ name, id, price, description="", image=null, callbackToParent }) 
     const handleClick = () => {
         callbackToParent({id, name, price, quantity});
     }
-    const handleClickItem = (data) => {
-        console.log(data)
-    }
 
     return (
         <div className={styles.main}>

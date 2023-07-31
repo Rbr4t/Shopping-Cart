@@ -11,7 +11,7 @@ h1 {
     color: white;
 }
 
-main>div {
+.bg {
     background-image: url('../assets/landing.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,17 +19,15 @@ main>div {
 
 .centre, .info, .cart {
     justify-items: center;
-    align-content: center;
 }
 
 .info {
-    position: relative;
-    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
 }
 
-.centre {
-    padding: 0.5rem;
-}
 
 .centre h1 {
     display: flex;
@@ -39,7 +37,7 @@ main>div {
 
 main {
     display: grid;
-    grid-template-rows: 0.2fr 2fr;
+    grid-template-rows: 1fr 20fr 1fr;
     height: 100vh; /* Right now setting this height centers it to the middle of the page, but it doesn't fill up the remaining room */
 }
 
@@ -90,10 +88,9 @@ button::backdrop {
 }
 
 .cart {
-    /* padding: 1rem; */
     background-color: rgba(255, 245, 245, 0.195);
     align-content: center;
-    height: 100%;
+    height: calc(100vh - 134px - 62px);
     width: 100%;
 }
 

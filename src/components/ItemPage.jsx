@@ -4,6 +4,8 @@ import Checkout from "../Checkout";
 import { useNavigate, useParams } from "react-router-dom";
 import ItemCss from '../styles/ItemPage.module.css'
 import ImageSlider from "./ImageSlider";
+import Footer from "./Footer";
+import styles from '../styles/Modal.module.css'
 
 const ItemPage = () => {
     const [cart, setCart] = useState(false);  // src/assets/images
@@ -24,36 +26,38 @@ const ItemPage = () => {
     }
 
     return (
-        <div>
+        <main>
             <Navbar showCart={showCart} />
-            <div disabled={cart} className={ItemCss.center} >
+            <div className={`${ItemCss.center} `}>
                 <button onClick={() => navigate(-1)}>←</button>
-
-                <div className={ItemCss.layout}>
-                    <div>
-                        <ImageSlider slides={data}/>
-                    </div>
-
-                    <div>
-                        <h2>{data.name}</h2>
-                        <p>{data.description}</p>
-                        <p><strong>{data.price} € + VAT</strong></p>
-
+                <div className={`${cart ? styles.two : styles.one}`} >
+                    <div className={ItemCss.layout} disabled={cart}>
                         <div>
-                            <p>Availability: <span style={{color: "green"}}>In stock</span></p>
-                        
+                            <ImageSlider slides={data}/>
+                        </div>
+
+                        <div style={{padding: '1rem'}}>
+                            <h2>{data.name}</h2>
+                            <p>{data.description}</p>
+                            <p><strong>{data.price} € + VAT</strong></p>
+
+                            <div>
+                                <p>Availability: <span style={{color: "green"}}>In stock</span></p>
+                            
+                            </div>
                         </div>
                     </div>
+                    
+                    {cart ? <Checkout callBackToParent={() => null} /> : null}
                 </div>
                 
                 
 
                 
             </div>
-            {cart ? <Checkout /> : null}
-            
+            <Footer />
 
-        </div>
+        </main>
     )
 }
 

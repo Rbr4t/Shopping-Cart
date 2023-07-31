@@ -54,14 +54,18 @@ const Store = () => {
           })
     }
 
+    const syncOrders = (orders) => {
+        addOrder(orders)
+    }
+
     // for saving our order data to localStorage
     useEffect( () => {
         localStorage.setItem('orders', JSON.stringify(orders))
     }, [orders])
 
     return (
-        <div>
-            <Navbar showCart={showCart} />
+        <main>
+            <Navbar showCart={showCart} orders={orders} />
             <div className={`centre ${cart ? modal.two : null}`}>
                 <div className={styles.nice_grid}>
                     <h1>Store</h1>
@@ -77,11 +81,11 @@ const Store = () => {
                     </div>
                 </div>
                 
-                {cart ? <Checkout /> : null}
+                {cart ? <Checkout callBackToParent={syncOrders} /> : null}
             </div>
             <Footer />
             
-        </div>
+        </main>
     )
 };
 

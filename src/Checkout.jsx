@@ -3,7 +3,7 @@ import './styles/Global.css'
 import styles from './styles/Checkout.module.css'
 import trash from './assets/trash.png'
 
-const Checkout = () => {
+const Checkout = ({ callBackToParent }) => {
     const [orders, setOrders] = useState(() => JSON.parse(localStorage.getItem('orders')) || [] )
     const productIcons = {
         "1": "../src/assets/images/pic1_1.avif",
@@ -59,6 +59,8 @@ const Checkout = () => {
         orders.map((order) => {
             setTotalSum(prev => prev + order.quantity*order.price)
         })
+        callBackToParent(orders)
+        window.dispatchEvent(new Event("storage"));
     }, [orders])
 
     return (

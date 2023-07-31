@@ -3,12 +3,38 @@ import cart from '../assets/shopping-cart.png'
 import cartStyles from '../styles/Cart.module.css'
 import navStyles from '../styles/Navbar.module.css'
 import lamp from '../assets/light-bulb.png'
+import { useEffect, useState } from "react";
 
 
-const Navbar = ({ showCart }) => {
+const Navbar = ({ showCart, orders }) => {
+    const [count, setCount]  = useState(0)
+
+    const showOrderCount = () => {
+        
+        if(orders===undefined) {
+            orders = JSON.parse(localStorage.getItem('orders'))
+            console.log(orders)
+        }
+        setCount(0)
+        orders.map((e) => {
+            setCount(prev => prev + e.quantity)
+        })
+    }
+
+    useEffect(() => {
+        showOrderCount()
+    }, [orders])
+
+    window.addEventListener('storage', () => {
+        showOrderCount()
+    })
+    window.removeEventListener('storage', () => {
+        showOrderCount()
+    })
+    
     return (
         <div>
-<nav className={navStyles}>
+            <nav className={navStyles}>
             
             <Link to="/"><h3 style={{display: "flex", alignItems: "center"}}>
                 <img src={lamp}></img> LightStore
@@ -21,12 +47,12 @@ const Navbar = ({ showCart }) => {
                             <img className={cartStyles.shopping_cart} alt="shopping cart" src={cart}></img>
                             
                         </div>
-                        <div className={cartStyles.notification}>4</div>
+                        <div className={cartStyles.notification}>{count}</div>
                     </div>
                 </Link>
             </div>
             
-        </nav>
+            </nav>
         </div>
         
     )
