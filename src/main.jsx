@@ -6,6 +6,8 @@ import Store from './Store.jsx';
 import ItemPage from './components/ItemPage.jsx'
 import Error from './components/Error.jsx';
 
+localStorage.setItem('orders', '[]');
+
 const router = createBrowserRouter([
   { 
     path: "/", 
